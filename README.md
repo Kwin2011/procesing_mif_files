@@ -1,2 +1,2 @@
 # procesing_mif_files
-Mramaker MIF files processing
+FrameMaker MIF files processing

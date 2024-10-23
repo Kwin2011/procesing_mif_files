@@ -41,7 +41,7 @@ class FileProcessor:
         else:
             print("Мовний код не знайдено у файлі. Використовується стандартний код.")
 
-        output_filename = f"prepred_{os.path.basename(file_path)}"
+        output_filename = f"_{os.path.basename(file_path)}"
         output_path = os.path.join(os.path.dirname(file_path), output_filename)
 
         self.replace_variables_in_file(file_path, output_path)

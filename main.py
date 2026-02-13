@@ -1,39 +1,50 @@
-import io
+import os
 import sys
-from settings import Settings
+from settings.settings_manager import SettingsManager
 from file_processor import FileProcessor
-from user_interaction import UserInteraction
+from file_handler import FileHandler
+from user_interface import ConsoleUserInterface
+from settings.settings_console_Interface import SettingsConsoleInterface
 
-# Set the standard output encoding to UTF-8 to ensure proper display of characters.
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 def main():
-    # Initialize objects for settings, user interaction, and file processing.
-    settings = Settings()
-    user_interaction = UserInteraction(settings)
-    file_processor = FileProcessor(settings, user_interaction)
+    print("MIF file processing program started")
 
-    # Main loop for the application.
+    ui = ConsoleUserInterface()
+
+    # --- 1. Ask for the first file ---
+    target_path = ui.ask_for_file_path()
+
+    if not os.path.isfile(target_path):
+        print(f"Error: file not found → {target_path}")
+        return
+
+    # --- 2. Show/edit settings once ---
+    SettingsConsoleInterface(target_path)
+
     while True:
-        # Display the current application settings to the user.
-        user_interaction.display_settings()
+        # --- 3. Initialize components ---
+        settings = SettingsManager(target_path=target_path)
+        processor = FileProcessor(settings)
 
-        # Prompt the user to enter a file path or choose to edit settings.
-        file_path = user_interaction.ask_to_edit_settings()
+        # --- 4. Process the file ---
+        try:
+            result_path = processor.process(target_path)
+            print(f"✅ File successfully processed: {result_path}")
+        except Exception as e:
+            print(f"⛔ Critical error: {str(e)}")
 
-        # If a file path is provided, proceed with file processing.
-        if file_path:
-            # Check if the provided file path is valid and the file exists.
-            if not file_processor.is_file_valid(file_path):
-                print("File not found. Please try again.")
-                continue  # Continue to the next iteration of the loop.
+        # --- 5. Ask if the user wants to continue ---
+        if not ui.ask_to_continue():
+            print("Processing finished")
+            break
 
-            # Process the specified file.
-            file_processor.process_file(file_path)
+        # --- 6. Ask for the next file ---
+        target_path = ui.ask_for_file_path()
+        if not os.path.isfile(target_path):
+            print(f"Error: file not found → {target_path}")
+            break
 
-        # Ask the user if they want to continue with another operation.
-        if not user_interaction.ask_to_continue():
-            break  # Exit the loop if the user chooses not to continue.
 
 if __name__ == "__main__":
     main()

@@ -1,5 +1,5 @@
 import re
-
+# ContentVariableReplacer.py
 
 def replace_variables(content, vars):
     # Regular expression to remove <Default ¶ Font\>

@@ -8332,7 +8332,7 @@
       <If 
        <Context `Warning[Type = "Danger"]'>
        <IsTextRange Yes>
-       <ElementPrefix `FARE'>
+       <ElementPrefix `NIEBEZPIECZEŃSTWO'>
        <FmtChangeList 
         <FColor `White'>
        >
@@ -8340,22 +8340,22 @@
       <ElseIf 
        <Context `Warning[Type = "Warning"]'>
        <IsTextRange Yes>
-       <ElementPrefix `ADVARSEL'>
+       <ElementPrefix `OSTRZEŻENIE'>
       >
       <ElseIf 
        <Context `Warning[Type = "Caution_PersonInjury"]'>
        <IsTextRange Yes>
-       <ElementPrefix `FORSIGTIG'>
+       <ElementPrefix `UWAGA'>
       >
       <ElseIf 
        <Context `Warning[Type = "Caution_MachineDamage"]'>
        <IsTextRange Yes>
-       <ElementPrefix `FORSIGTIG'>
+       <ElementPrefix `UWAGA'>
       >
       <ElseIf 
        <Context `Warning[Type = "Notice"]'>
        <IsTextRange Yes>
-       <ElementPrefix `BEMERK'>
+       <ElementPrefix `NOTYFIKACJA'>
        <FmtChangeList 
         <FAngle `Italic'>
         <FColor `White'>
@@ -8363,7 +8363,7 @@
       >
       <Else 
        <IsTextRange Yes>
-       <ElementPrefix `FORSIGTIG'>
+       <ElementPrefix `UWAGA'>
       >
      >
     >
@@ -8455,7 +8455,7 @@
       <If 
        <Context `Warning[Type = "Danger"]'>
        <IsTextRange Yes>
-       <ElementPrefix `FARE'>
+       <ElementPrefix `NIEBEZPIECZEŃSTWO'>
        <FmtChangeList 
         <FColor `White'>
        >
@@ -9288,12 +9288,12 @@
       <ElseIf 
        <Context `Warning[Type = "Caution_PersonInjury"]'>
        <IsTextRange Yes>
-       <ElementPrefix `Þ¢“‚'>
+       <ElementPrefix `Þ¢"‚'>
       >
       <ElseIf 
        <Context `Warning[Type = "Caution_MachineDamage"]'>
        <IsTextRange Yes>
-       <ElementPrefix `Þ¢“‚'>
+       <ElementPrefix `Þ¢"‚'>
       >
       <ElseIf 
        <Context `Warning[Type = "Notice"]'>
@@ -9306,7 +9306,7 @@
       >
       <Else 
        <IsTextRange Yes>
-       <ElementPrefix `Þ¢“‚'>
+       <ElementPrefix `Þ¢"‚'>
       >
      >
     >
@@ -14809,8 +14809,8 @@
    <RomanChar `!"#$%&\q()*+,-./0123456789:;<=\>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_\Qabc'>
    <RomanChar `defghijklmnopqrstuvwxyz{|}~­ÄÅÇÉÑÖÜáàâäãåçéèêëí'>
    <RomanChar `ìîïñóòôöõúùûü†¢£§•¶ß®©™´¨¦ÆØ×±ðŠ'>
-   <RomanChar `¥µ¹²³¼½ªº¾æø¿¡¬ÐƒÝý«»…þÀÃÕŒœ–—“”'>
-   <RomanChar `‘’÷ÞÿŸ⁄¤‹›‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔšÒÚ'>
+   <RomanChar `¥µ¹²³¼½ªº¾æø¿¡¬ÐƒÝý«»…þÀÃÕŒœ–—"”'>
+   <RomanChar `‘’÷ÞÿŸ⁄¤‹›‡·‚"‰ÂÊÁËÈÍÎÏÌÓÔšÒÚ'>
    <RomanChar `ÛÙ€ˆ˜¯Ž°¸˝žˇ'>
    <ParenBegWariChu `'>
    <ParenEndWariChu `'>
@@ -14910,7 +14910,7 @@
  <Kumihan 
   <KLanguage Japanese>
   <CharClass 
-   <BegParentheses `‘“（〔［｛〈《「『【'>
+   <BegParentheses `‘"（〔［｛〈《「『【'>
    <EndParentheses `、，’”）〕］｝〉》」』】'>
    <NoLineBeginChar `ヽヾゝゞ々ーぁぃぅぇぉっゃゅょゎァィゥェォ'>
    <NoLineBeginChar `ッャュョヮヵヶ'>
@@ -15036,7 +15036,7 @@
  <Kumihan 
   <KLanguage Korean>
   <CharClass 
-   <BegParentheses `‘“〔〈《「『【（［｛'>
+   <BegParentheses `‘"〔〈《「『【（［｛'>
    <EndParentheses `’”〕〉》」』】）］｝'>
    <NoLineBeginChar `'>
    <QuestionBang `！？'>
@@ -15155,7 +15155,7 @@
  <Kumihan 
   <KLanguage SimplifiedChinese>
   <CharClass 
-   <BegParentheses `‘“〔〈《「『〖【（［｛'>
+   <BegParentheses `‘"〔〈《「『〖【（［｛'>
    <EndParentheses `’”〕〉》」』〗】）］｝'>
    <NoLineBeginChar `'>
    <QuestionBang `！？'>
@@ -15271,7 +15271,7 @@
  <Kumihan 
   <KLanguage TraditionalChinese>
   <CharClass 
-   <BegParentheses `（｛〔【《〈「『﹙﹛﹝‘“〝‵'>
+   <BegParentheses `（｛〔【《〈「『﹙﹛﹝‘"〝‵'>
    <EndParentheses `）｝〕】》〉」』﹚﹜﹞’”〞′'>
    <NoLineBeginChar `'>
    <QuestionBang `？！'>
@@ -15491,7 +15491,7 @@
  >
  <VariableFormat 
   <VariableName `SCHKA1Version'>
-  <VariableDef `15'>
+  <VariableDef `01'>
  >
  <VariableFormat 
   <VariableName `SCHKA2Version'>
@@ -15519,7 +15519,7 @@
  >
  <VariableFormat 
   <VariableName `SCHKA1Number'>
-  <VariableDef `600171'>
+  <VariableDef `66666'>
  >
  <VariableFormat 
   <VariableName `SCHKA2Number'>
@@ -15547,7 +15547,7 @@
  >
  <VariableFormat 
   <VariableName `SCHKA1Date'>
-  <VariableDef `26.10.2024'>
+  <VariableDef `11.12.2025'>
  >
  <VariableFormat 
   <VariableName `SCHKA2Date'>
@@ -15627,7 +15627,7 @@
  >
  <VariableFormat 
   <VariableName `TIMDateReleasedRD'>
-  <VariableDef `29.06.2024'>
+  <VariableDef `29.09.2025'>
  >
  <VariableFormat 
   <VariableName `TIMNameReleasedRD'>
@@ -15643,7 +15643,7 @@
  >
  <VariableFormat 
   <VariableName `TIMDocNumber'>
-  <VariableDef `41416056_DA'>
+  <VariableDef `41416056_PL'>
  >
  <VariableFormat 
   <VariableName `SCHCopyright'>
@@ -15695,7 +15695,7 @@
  >
  <VariableFormat 
   <VariableName `SCHDateReleased'>
-  <VariableDef `17.10.2024'>
+  <VariableDef `29.09.2025'>
  >
  <VariableFormat 
   <VariableName `SCHKA8Version'>
@@ -15805,7 +15805,7 @@
  >
  <XRefFormat 
   <XRefName `Tabelle lang'>
-  <XRefDef `Tabelle\x11 <$paranumonly\>, „<$paratext\>“, auf Seite\x11 <$pagenum\>'>
+  <XRefDef `Tabelle\x11 <$paranumonly\>, "<$paratext\>", auf Seite\x11 <$pagenum\>'>
  >
  <XRefFormat 
   <XRefName `Tabellennr. & Seite'>
@@ -15825,7 +15825,7 @@
  >
  <XRefFormat 
   <XRefName `Heading & Page'>
-  <XRefDef `“<$paratext\>” on page\x11 <$pagenum\>'>
+  <XRefDef `"<$paratext\>” on page\x11 <$pagenum\>'>
  >
  <XRefFormat 
   <XRefName `Page'>
@@ -15833,11 +15833,11 @@
  >
  <XRefFormat 
   <XRefName `See Heading & Page'>
-  <XRefDef `See “<$paratext\>” on page\x11 <$pagenum\>.'>
+  <XRefDef `See "<$paratext\>” on page\x11 <$pagenum\>.'>
  >
  <XRefFormat 
   <XRefName `Table All'>
-  <XRefDef `Table\x11 <$paranumonly\>, “<$paratext\>,” on page\x11 <$pagenum\>'>
+  <XRefDef `Table\x11 <$paranumonly\>, "<$paratext\>,” on page\x11 <$pagenum\>'>
  >
  <XRefFormat 
   <XRefName `Table Number & Page'>
@@ -18629,9 +18629,9 @@
   >
   <TblNumColumns 3>
   <Unique 2185870>
-  <TblColumnWidth 11.93173 cm>
-  <TblColumnWidth 2.12327 cm>
-  <TblColumnWidth 3.505 cm>
+  <TblColumnWidth 10.175 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 4.919 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -20050,9 +20050,9 @@
   >
   <TblNumColumns 3>
   <Unique 2185347>
-  <TblColumnWidth 11.93173 cm>
-  <TblColumnWidth 2.12327 cm>
-  <TblColumnWidth 3.505 cm>
+  <TblColumnWidth 10.175 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 4.919 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -20772,13 +20772,13 @@
   >
   <TblNumColumns 7>
   <Unique 2185380>
-  <TblColumnWidth 2.7968 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.52834 cm>
-  <TblColumnWidth 2.52834 cm>
+  <TblColumnWidth 2.797 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -21502,9 +21502,9 @@
   >
   <TblNumColumns 3>
   <Unique 2185173>
-  <TblColumnWidth 11.93173 cm>
-  <TblColumnWidth 2.14069 cm>
-  <TblColumnWidth 3.505 cm>
+  <TblColumnWidth 10.175 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 4.919 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -21979,13 +21979,13 @@
   >
   <TblNumColumns 7>
   <Unique 2185206>
-  <TblColumnWidth 2.7968 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.52834 cm>
-  <TblColumnWidth 2.52834 cm>
+  <TblColumnWidth 2.797 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -23297,9 +23297,9 @@
   >
   <TblNumColumns 3>
   <Unique 2183261>
-  <TblColumnWidth 11.93173 cm>
-  <TblColumnWidth 2.16131 cm>
-  <TblColumnWidth 3.505 cm>
+    <TblColumnWidth 10.175 cm>
+  <TblColumnWidth 2.46 cm>
+  <TblColumnWidth 4.919 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -25227,9 +25227,9 @@
   >
   <TblNumColumns 3>
   <Unique 2183088>
-  <TblColumnWidth 11.93173 cm>
-  <TblColumnWidth 2.12327 cm>
-  <TblColumnWidth 3.505 cm>
+  <TblColumnWidth 10.175 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 4.919 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -26440,9 +26440,9 @@
   >
   <TblNumColumns 3>
   <Unique 2183606>
-  <TblColumnWidth 11.93173 cm>
-  <TblColumnWidth 2.12327 cm>
-  <TblColumnWidth 3.505 cm>
+  <TblColumnWidth 10.175 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 4.919 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -26910,13 +26910,13 @@
   >
   <TblNumColumns 7>
   <Unique 2183121>
-  <TblColumnWidth 2.7968 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.52834 cm>
-  <TblColumnWidth 2.52834 cm>
+  <TblColumnWidth 2.797 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -27568,13 +27568,13 @@
   >
   <TblNumColumns 7>
   <Unique 2183638>
-  <TblColumnWidth 2.7968 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.52834 cm>
-  <TblColumnWidth 2.52834 cm>
+  <TblColumnWidth 2.797 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -31274,9 +31274,9 @@
   >
   <TblNumColumns 3>
   <Unique 2185521>
-  <TblColumnWidth 11.93173 cm>
-  <TblColumnWidth 2.12327 cm>
-  <TblColumnWidth 3.505 cm>
+  <TblColumnWidth 10.175 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 4.919 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -31740,13 +31740,13 @@
   >
   <TblNumColumns 7>
   <Unique 2185553>
-  <TblColumnWidth 2.7968 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.52834 cm>
-  <TblColumnWidth 2.52834 cm>
+  <TblColumnWidth 2.797 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -34043,9 +34043,9 @@
   >
   <TblNumColumns 3>
   <Unique 2180642>
-  <TblColumnWidth 11.93173 cm>
-  <TblColumnWidth 2.12327 cm>
-  <TblColumnWidth 3.505 cm>
+  <TblColumnWidth 10.175 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 4.919 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -35935,13 +35935,13 @@
   >
   <TblNumColumns 7>
   <Unique 2181549>
-  <TblColumnWidth 2.89033 cm>
-  <TblColumnWidth 2.49553 cm>
-  <TblColumnWidth 2.32456 cm>
-  <TblColumnWidth 2.49553 cm>
-  <TblColumnWidth 2.32456 cm>
-  <TblColumnWidth 2.51262 cm>
-  <TblColumnWidth 2.51263 cm>
+  <TblColumnWidth 2.797 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -36822,9 +36822,9 @@
   >
   <TblNumColumns 3>
   <Unique 2183435>
-  <TblColumnWidth 11.93173 cm>
-  <TblColumnWidth 2.13485 cm>
-  <TblColumnWidth 3.505 cm>
+  <TblColumnWidth 10.175 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 4.919 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -38642,9 +38642,9 @@
   >
   <TblNumColumns 3>
   <Unique 2184303>
-  <TblColumnWidth 11.93173 cm>
-  <TblColumnWidth 2.12327 cm>
-  <TblColumnWidth 3.505 cm>
+  <TblColumnWidth 10.175 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 4.919 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -39119,13 +39119,13 @@
   >
   <TblNumColumns 7>
   <Unique 2184336>
-  <TblColumnWidth 2.7968 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.52834 cm>
-  <TblColumnWidth 2.52834 cm>
+  <TblColumnWidth 2.797 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -41254,9 +41254,9 @@
   >
   <TblNumColumns 3>
   <Unique 2186042>
-  <TblColumnWidth 11.93173 cm>
-  <TblColumnWidth 2.13485 cm>
-  <TblColumnWidth 3.505 cm>
+  <TblColumnWidth 10.175 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 4.919 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -50141,13 +50141,13 @@
   >
   <TblNumColumns 7>
   <Unique 2180674>
-  <TblColumnWidth 2.7968 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.52834 cm>
-  <TblColumnWidth 2.52834 cm>
+  <TblColumnWidth 2.797 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -57855,9 +57855,9 @@
   >
   <TblNumColumns 3>
   <Unique 2182046>
-  <TblColumnWidth 11.93173 cm>
-  <TblColumnWidth 2.12327 cm>
-  <TblColumnWidth 3.505 cm>
+  <TblColumnWidth 10.175 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 4.919 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -58311,9 +58311,9 @@
   >
   <TblNumColumns 3>
   <Unique 2181347>
-  <TblColumnWidth 11.93173 cm>
-  <TblColumnWidth 2.12327 cm>
-  <TblColumnWidth 3.505 cm>
+  <TblColumnWidth 10.175 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 4.919 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -59477,9 +59477,9 @@
   >
   <TblNumColumns 3>
   <Unique 2182741>
-  <TblColumnWidth 11.93173 cm>
-  <TblColumnWidth 2.12327 cm>
-  <TblColumnWidth 3.505 cm>
+  <TblColumnWidth 10.175 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 4.919 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -60605,13 +60605,13 @@
   >
   <TblNumColumns 7>
   <Unique 2182079>
-  <TblColumnWidth 2.7968 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.52834 cm>
-  <TblColumnWidth 2.52834 cm>
+  <TblColumnWidth 2.797 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -64734,13 +64734,13 @@
   >
   <TblNumColumns 7>
   <Unique 2185902>
-  <TblColumnWidth 2.7968 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.52834 cm>
-  <TblColumnWidth 2.52834 cm>
+  <TblColumnWidth 2.797 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -69326,9 +69326,9 @@
   >
   <TblNumColumns 3>
   <Unique 2181697>
-  <TblColumnWidth 11.93173 cm>
-  <TblColumnWidth 2.12327 cm>
-  <TblColumnWidth 3.505 cm>
+  <TblColumnWidth 10.175 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 4.919 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -69803,13 +69803,13 @@
   >
   <TblNumColumns 7>
   <Unique 2182604>
-  <TblColumnWidth 2.7968 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.52834 cm>
-  <TblColumnWidth 2.52834 cm>
+  <TblColumnWidth 2.797 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -70843,13 +70843,13 @@
   >
   <TblNumColumns 7>
   <Unique 2181380>
-  <TblColumnWidth 2.7968 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.52834 cm>
-  <TblColumnWidth 2.52834 cm>
+  <TblColumnWidth 2.797 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -71480,9 +71480,9 @@
   >
   <TblNumColumns 3>
   <Unique 2183778>
-  <TblColumnWidth 11.93173 cm>
-  <TblColumnWidth 2.12327 cm>
-  <TblColumnWidth 3.505 cm>
+  <TblColumnWidth 10.175 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 4.919 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -79830,13 +79830,13 @@
   >
   <TblNumColumns 7>
   <Unique 2181730>
-  <TblColumnWidth 2.7968 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.52834 cm>
-  <TblColumnWidth 2.52834 cm>
+  <TblColumnWidth 2.797 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -81158,13 +81158,13 @@
   >
   <TblNumColumns 7>
   <Unique 2183811>
-  <TblColumnWidth 2.7968 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.52834 cm>
-  <TblColumnWidth 2.52834 cm>
+  <TblColumnWidth 2.797 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -84906,13 +84906,13 @@
   >
   <TblNumColumns 7>
   <Unique 2182773>
-  <TblColumnWidth 2.7968 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.51114 cm>
-  <TblColumnWidth 2.3391 cm>
-  <TblColumnWidth 2.52834 cm>
-  <TblColumnWidth 2.52834 cm>
+  <TblColumnWidth 2.797 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
+<TblColumnWidth 2.46 cm>
   <TableColumn >
   <TableColumn >
   <TableColumn >
@@ -105612,7 +105612,7 @@
  <PageSize 21.0 cm 29.7 cm>
  <PageOrientation Portrait>
  <PageAngle 0.0>
- <PageBackground `Default'>
+ <PageBackground `Restriction_PL'>>>
  <TextRect 
   <ID 370>
   <Unique 1106475>

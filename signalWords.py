@@ -235,6 +235,15 @@ class SignalWordsReplacer:
         """
         return lang_code in cls.get_all_language_codes()
 
+    COLORS = {
+        "DANGER": "\033[91m",   # Red
+        "WARNING": "\033[33m",  # Orange (ANSI дає темно-жовтий, найближчий до orange)
+        "CAUTION": "\033[93m",  # Yellow
+        "NOTICE": "\033[94m",   # Blue
+        "RESET": "\033[0m",     # Reset (білий/звичайний)
+    }
+
+
     def replace(self, content: str) -> str:
         """
         Replace all signal words in the provided content with translations 
@@ -253,6 +262,9 @@ class SignalWordsReplacer:
             if self.language_code in translations:
                 new_content = re.sub(signal_word, translations[self.language_code], content)
                 if new_content != content:
-                    print(f"Replaced '{signal_word}' with '{translations[self.language_code]}'")
+                    color = self.COLORS.get(signal_word, self.COLORS["RESET"])
+                    print(f"{self.COLORS['RESET']}Replaced '{color}{signal_word}{self.COLORS['RESET']}' "
+                          f"with '{color}{translations[self.language_code]}{self.COLORS['RESET']}'")
                     content = new_content
         return content
+

@@ -19,17 +19,17 @@ class FileProcessor:
 
     def process(self, file_path: str) -> str:
         """Process file and return path to processed file"""
-        # 1. Читаємо файл
+        # 1. Read the file
         content = FileHandler.read_file(file_path)
 
-        # 2. Обробляємо контент
+        # 2. Process the content
         content = self.content_processor.process(file_path, content, self.signal_replacer)
 
-        # 3. Формуємо новий шлях
+        # 3. Create the new path
         base, ext = os.path.splitext(file_path)
         result_path = f"{base}_processed{ext}"
 
-        # 4. Записуємо новий файл
+        # 4. Write the new file
         FileHandler.write_file(result_path, content)
 
         return result_path

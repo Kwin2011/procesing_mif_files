@@ -1,0 +1,17 @@
+[
+  {
+    "pattern": "<FmtChangeList\\s*\\n\\s*<FclTag\\s+`FmtHeading3'>\\s*\\n\\s*<PgfPlacement\\s+ColumnTop>\\s*\\n\\s*<PgfTopSeparator\\s+`Heading3SeparatorTop'>\\s*\\n\\s*<PgfBotSeparator\\s+`Heading3SeparatorBottom'>\\s*\\n\\s*<FWeight\\s+`Bold'>\\s*\\n\\s*<FSize\\s+11\\.0\\s+pt>\\s*\\n\\s*<FColor\\s+`Black'>\\s*\\n\\s*>",
+    "replacement": "<FmtChangeList \\n  <FclTag `FmtHeading33333'>\\n  <PgfPlacement ColumnTop>\\n  <PgfTopSeparator `Heading3SeparatorTop'>\\n  <PgfBotSeparator `Heading3SeparatorBottom'>\\n  <FWeight `Bold'>\\n  <FSize 13.0 pt>\\n  <FColor `Black'>\\n >",
+    "description": "test1"
+  },
+  {
+    "pattern": "(<FmtChangeList\\b[\\s\\S]*?<FclTag\\s*`FmtX1_2pt'>[\\s\\S]*?<PgfFIndent\\s*)[-+]?\\d*\\.?\\d+(\\s*cm>[\\s\\S]*?<PgfFIndentRelative\\s*No>[\\s\\S]*?<PgfLIndent\\s*)[-+]?\\d*\\.?\\d+(\\s*cm>[\\s\\S]*?<PgfRIndent\\s*)[-+]?\\d*\\.?\\d+(\\s*cm>[\\s\\S]*?<PgfAlignment\\s*Left>[\\s\\S]*?<PgfSpBefore\\s*)[-+]?\\d*\\.?\\d+(\\s*pt>[\\s\\S]*?<PgfSpAfter\\s*)[-+]?\\d*\\.?\\d+(\\s*pt>[\\s\\S]*?<PgfLeading\\s*)[-+]?\\d*\\.?\\d+(\\s*pt>)",
+    "replacement": "\\g<1>0.80\\g<2>0.70\\g<3>0.60\\g<4>2.0\\g<5>0.66\\g<6>0.66\\g<7>",
+    "description": "test2"
+  },
+  {
+    "pattern": "(<FmtChangeList\\b[^<]*<FclTag\\b[^<]*`Language-AR'>\\s*<PgfHyphenate\\b[^<]*No\\s*>\\s*<FLanguage\\b[^<]*NoLanguage\\s*>)",
+    "replacement": "<FmtChangeList \\n  <FclTag `Language-KWIN'>\\n  <PgfHyphenate YESYESYES>\\n  <FLanguage YesLanguage>",
+    "description": "test3"
+  }
+]

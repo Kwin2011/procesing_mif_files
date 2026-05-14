@@ -1,4 +1,5 @@
 import re
+import os
 from json_rule_loader import JsonRuleLoader
 
 
@@ -33,10 +34,18 @@ class ContentReplacer:
     def process(self) -> str:
         self.logs.append("--- Content processing started ---")
 
-        # Rules loaded from JSON files
+        # Built-in rules from JSON files
         self.content = self._loader.apply(self.content, "cleanup_rules.json",  logs=self.logs)
         self.content = self._loader.apply(self.content, "table_rules.json",    logs=self.logs)
         self.content = self._loader.apply(self.content, "variable_rules.json", vars=self.vars, logs=self.logs)
+
+        # Custom rules added by admin (applied last, no variable substitution)
+        custom_path = os.path.join(self._loader.rules_dir, "custom_rules.json")
+        if os.path.isfile(custom_path):
+            self.logs.append("[INFO]    Applying custom_rules.json")
+            self.content = self._loader.apply(self.content, "custom_rules.json", logs=self.logs)
+        else:
+            self.logs.append("[INFO]    custom_rules.json not found — skipping")
 
         # Conditional logic that needs Python
         self._handle_page_background()

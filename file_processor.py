@@ -2,6 +2,7 @@ import os
 from file_handler import FileHandler
 from content_processor import ContentProcessor
 from signalWords import SignalWordsReplacer
+from processing_logger import ProcessingLogger
 
 
 class FileProcessor:
@@ -18,18 +19,26 @@ class FileProcessor:
             self.signal_replacer = None
 
     def process(self, file_path: str) -> str:
-        """Process file and return path to processed file"""
-        # 1. Read the file
+        """Process file, write result and a log file. Returns path to processed file."""
+        logger = ProcessingLogger(file_path)
+
+        # 1. Read
         content = FileHandler.read_file(file_path)
 
-        # 2. Process the content
+        # 2. Process
         content = self.content_processor.process(file_path, content, self.signal_replacer)
 
-        # 3. Create the new path
+        # 3. Collect logs from ContentReplacer (passed up via content_processor)
+        if hasattr(self.content_processor, "last_logs"):
+            logger.add_all(self.content_processor.last_logs)
+
+        # 4. Write output file
         base, ext = os.path.splitext(file_path)
         result_path = f"{base}_processed{ext}"
-
-        # 4. Write the new file
         FileHandler.write_file(result_path, content)
+
+        # 5. Save log
+        log_path = logger.save()
+        print(f"📋 Log saved: {log_path}")
 
         return result_path

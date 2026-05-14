@@ -1,0 +1,47 @@
+[
+  {
+    "pattern": "<TblColumnWidth\\s*2\\.89033\\s*cm>\\s*<TblColumnWidth\\s*2\\.49553\\s*cm>\\s*<TblColumnWidth\\s*2\\.32456\\s*cm>\\s*<TblColumnWidth\\s*2\\.49553\\s*cm>\\s*<TblColumnWidth\\s*2\\.32456\\s*cm>\\s*<TblColumnWidth\\s*2\\.51262\\s*cm>\\s*<TblColumnWidth\\s*2\\.51263\\s*cm>",
+    "replacement": "<TblColumnWidth 2.797 cm>\n<TblColumnWidth 2.46 cm>\n<TblColumnWidth 2.46 cm>\n<TblColumnWidth 2.46 cm>\n<TblColumnWidth 2.46 cm>\n<TblColumnWidth 2.46 cm>\n<TblColumnWidth 2.46 cm>",
+    "description": "7-column table widths variant A"
+  },
+  {
+    "pattern": "<TblColumnWidth\\s*2\\.7968\\s*cm>\\s*<TblColumnWidth\\s*2\\.51114\\s*cm>\\s*<TblColumnWidth\\s*2\\.3391\\s*cm>\\s*<TblColumnWidth\\s*2\\.51114\\s*cm>\\s*<TblColumnWidth\\s*2\\.3391\\s*cm>\\s*<TblColumnWidth\\s*2\\.52834\\s*cm>\\s*<TblColumnWidth\\s*2\\.52834\\s*cm>",
+    "replacement": "<TblColumnWidth 2.797 cm>\n<TblColumnWidth 2.46 cm>\n<TblColumnWidth 2.46 cm>\n<TblColumnWidth 2.46 cm>\n<TblColumnWidth 2.46 cm>\n<TblColumnWidth 2.46 cm>\n<TblColumnWidth 2.46 cm>",
+    "description": "7-column table widths variant B"
+  },
+  {
+    "pattern": "<TblColumnWidth\\s*2\\.81372\\s*cm>\\s*<TblColumnWidth\\s*2\\.51114\\s*cm>\\s*<TblColumnWidth\\s*2\\.3391\\s*cm>\\s*<TblColumnWidth\\s*2\\.51114\\s*cm>\\s*<TblColumnWidth\\s*2\\.3391\\s*cm>\\s*<TblColumnWidth\\s*2\\.52834\\s*cm>\\s*<TblColumnWidth\\s*2\\.52834\\s*cm>",
+    "replacement": "<TblColumnWidth 2.797 cm>\n<TblColumnWidth 2.46 cm>\n<TblColumnWidth 2.46 cm>\n<TblColumnWidth 2.46 cm>\n<TblColumnWidth 2.46 cm>\n<TblColumnWidth 2.46 cm>\n<TblColumnWidth 2.46 cm>",
+    "description": "7-column table widths variant C"
+  },
+  {
+    "pattern": "<TblColumnWidth\\s*11\\.93173\\s*cm>\\s*<TblColumnWidth\\s*2\\.16131\\s*cm>\\s*<TblColumnWidth\\s*3\\.505\\s*cm>",
+    "replacement": "<TblColumnWidth 10.175 cm>\n<TblColumnWidth 2.46 cm>\n<TblColumnWidth 4.919 cm>",
+    "description": "3-column portrait widths variant A"
+  },
+  {
+    "pattern": "<TblColumnWidth\\s*11\\.93173\\s*cm>\\s*<TblColumnWidth\\s*2\\.14069\\s*cm>\\s*<TblColumnWidth\\s*3\\.505\\s*cm>",
+    "replacement": "<TblColumnWidth 10.175 cm>\n<TblColumnWidth 2.46 cm>\n<TblColumnWidth 4.919 cm>",
+    "description": "3-column portrait widths variant B"
+  },
+  {
+    "pattern": "<TblColumnWidth\\s*11\\.93173\\s*cm>\\s*<TblColumnWidth\\s*2\\.12327\\s*cm>\\s*<TblColumnWidth\\s*3\\.505\\s*cm>",
+    "replacement": "<TblColumnWidth 10.175 cm>\n<TblColumnWidth 2.46 cm>\n<TblColumnWidth 4.919 cm>",
+    "description": "3-column portrait widths variant C"
+  },
+  {
+    "pattern": "<TblColumnWidth\\s*11\\.93173\\s*cm>\\s*<TblColumnWidth\\s*2\\.13485\\s*cm>\\s*<TblColumnWidth\\s*3\\.505\\s*cm>",
+    "replacement": "<TblColumnWidth 10.175 cm>\n<TblColumnWidth 2.46 cm>\n<TblColumnWidth 4.919 cm>",
+    "description": "3-column portrait widths variant D"
+  },
+  {
+    "pattern": "<TblColumnWidth\\s*11\\.93173\\s*cm>\\s*<TblColumnWidth\\s*2\\.12504\\s*cm>\\s*<TblColumnWidth\\s*3\\.505\\s*cm>",
+    "replacement": "<TblColumnWidth 10.175 cm>\n<TblColumnWidth 2.46 cm>\n<TblColumnWidth 4.919 cm>",
+    "description": "3-column portrait widths variant E"
+  },
+  {
+    "pattern": "<TblColumnWidth\\s*14\\.23654\\s*cm>\\s*<TblColumnWidth\\s*2\\.881\\s*cm>\\s*<TblColumnWidth\\s*2\\.881\\s*cm>",
+    "replacement": "<TblColumnWidth 11.363 cm>\n<TblColumnWidth 2.881 cm>\n<TblColumnWidth 5.76 cm>",
+    "description": "3-column landscape widths"
+  }
+]

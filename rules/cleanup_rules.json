@@ -1,0 +1,22 @@
+[
+  {
+    "pattern": "(<VariableDef\\s*`<Default ¶ Font\\\\>)(.*?)'",
+    "replacement": "<VariableDef `\\2'",
+    "description": "Remove '<Default ¶ Font>' tag from VariableDef"
+  },
+  {
+    "pattern": "(<VariableFormat\\s*>\\s*<VariableName\\s*`TIMLeadOfficeReleasedRD'?>\\s*<VariableDef\\s*`)(NE1)('?>\\s*>)",
+    "replacement": "\\1'>\n>",
+    "description": "Clear TIMLeadOfficeReleasedRD value NE1"
+  },
+  {
+    "pattern": "(<VariableName\\s*`SCHLeadOffice'?>\\s*<VariableDef\\s*`)(.*?)'",
+    "replacement": "\\1'",
+    "description": "Clear SCHLeadOffice value"
+  },
+  {
+    "pattern": "[„“]",
+    "replacement": "\"",
+    "description": "Replace special quotation marks with standard double quotes"
+  }
+]

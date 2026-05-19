@@ -1,0 +1,10 @@
+# Ignore all files with the specified extensions
+
+# MapInfo Interchange Format / other .mif files
+*.mif
+
+# FileMaker or FrameMaker files
+*.fm
+
+# Microsoft Word documents
+*.docx

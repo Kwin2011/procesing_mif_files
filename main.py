@@ -5,10 +5,19 @@ from file_processor import FileProcessor
 from file_handler import FileHandler
 from user_interface import ConsoleUserInterface
 from settings.settings_console_Interface import SettingsConsoleInterface
+from logs_admin import LogsAdminInterface
 
 
 def main():
     print("MIF file processing program started")
+    print("\nOptions:")
+    print("  [1] Process MIF files")
+    print("  [2] View processing history (Log Admin)")
+    choice = input("\nChoose (1/2): ").strip()
+
+    if choice == "2":
+        LogsAdminInterface()
+        return
 
     ui = ConsoleUserInterface()
 
@@ -36,7 +45,12 @@ def main():
 
         # --- 5. Ask if the user wants to continue ---
         if not ui.ask_to_continue():
-            print("Processing finished")
+            print("Processing finished.")
+
+            # Offer to open log admin after finishing
+            view_logs = input("\nOpen processing history? (y/n): ").strip().lower()
+            if view_logs == "y":
+                LogsAdminInterface()
             break
 
         # --- 6. Ask for the next file ---

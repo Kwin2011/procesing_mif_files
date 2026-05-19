@@ -1,73 +1,128 @@
 import os
+import json
 from datetime import datetime
 
 
 class ProcessingLogger:
     """
-    Writes a processing log file next to the output file.
+    Manages processing history logs for MIF files.
 
-    Log format:
-        [SUCCESS] description: N replacement(s) made.
-        [FAILURE] description: no matches found.
-        [ERROR]   description: invalid regex — ...
-        [INFO]    informational message
-        [WARNING] non-fatal issue
+    Each processed file gets a JSON log entry stored in the logs/ directory.
+    The master index (logs/index.json) keeps a summary of all processed files.
+
+    Log entry structure:
+    {
+        "file_path": str,
+        "file_name": str,
+        "processed_at": str (ISO 8601),
+        "result_path": str,
+        "status": "success" | "error",
+        "error_message": str | null,
+        "settings_snapshot": dict,
+        "content_logs": list[str]
+    }
     """
 
-    def __init__(self, source_file_path: str):
+    LOGS_DIR = "logs"
+    INDEX_FILE = "logs/index.json"
+
+    def __init__(self):
+        self._ensure_logs_dir()
+
+    def _ensure_logs_dir(self):
+        """Create logs directory if it does not exist."""
+        os.makedirs(self.LOGS_DIR, exist_ok=True)
+
+    def _load_index(self) -> list:
+        """Load the master index of all processed files."""
+        if not os.path.isfile(self.INDEX_FILE):
+            return []
+        try:
+            with open(self.INDEX_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return []
+
+    def _save_index(self, index: list):
+        """Persist the master index to disk."""
+        with open(self.INDEX_FILE, "w", encoding="utf-8") as f:
+            json.dump(index, f, indent=4, ensure_ascii=False)
+
+    def _log_file_path(self, timestamp: str, file_name: str) -> str:
+        """Build a unique log file path based on timestamp and file name."""
+        safe_name = file_name.replace("/", "_").replace("\\", "_")
+        safe_ts = timestamp.replace(":", "-").replace(".", "-")
+        return os.path.join(self.LOGS_DIR, f"{safe_ts}__{safe_name}.json")
+
+    def save_log(
+        self,
+        file_path: str,
+        result_path: str | None,
+        status: str,
+        settings_snapshot: dict,
+        content_logs: list[str],
+        error_message: str | None = None,
+    ) -> str:
         """
-        :param source_file_path: Path to the MIF file being processed.
-                                 The log will be written alongside it.
+        Save a processing log entry for one file.
+
+        :param file_path: Original input file path.
+        :param result_path: Output file path (None on error).
+        :param status: 'success' or 'error'.
+        :param settings_snapshot: Metadata dict at the time of processing.
+        :param content_logs: List of log strings from ContentReplacer.
+        :param error_message: Error description if status is 'error'.
+        :return: Path to the saved log file.
         """
-        base, _ = os.path.splitext(source_file_path)
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        self.log_path = f"{base}_log_{timestamp}.txt"
-        self._lines = []
-        self._stats = {"SUCCESS": 0, "FAILURE": 0, "ERROR": 0}
+        timestamp = datetime.now().isoformat(timespec="seconds")
+        file_name = os.path.basename(file_path)
 
-    def add(self, message: str) -> None:
-        """Append one log message and update counters."""
-        self._lines.append(message)
-        for level in self._stats:
-            if message.startswith(f"[{level}]"):
-                self._stats[level] += 1
-                break
+        entry = {
+            "file_path": file_path,
+            "file_name": file_name,
+            "processed_at": timestamp,
+            "result_path": result_path,
+            "status": status,
+            "error_message": error_message,
+            "settings_snapshot": settings_snapshot,
+            "content_logs": content_logs,
+        }
 
-    def add_all(self, messages: list) -> None:
-        """Append a list of messages (e.g. from ContentReplacer.get_logs())."""
-        for msg in messages:
-            self.add(msg)
+        log_file = self._log_file_path(timestamp, file_name)
+        with open(log_file, "w", encoding="utf-8") as f:
+            json.dump(entry, f, indent=4, ensure_ascii=False)
 
-    def save(self) -> str:
+        # Update master index
+        index = self._load_index()
+        index.append({
+            "file_name": file_name,
+            "file_path": file_path,
+            "processed_at": timestamp,
+            "status": status,
+            "log_file": log_file,
+        })
+        self._save_index(index)
+
+        return log_file
+
+    def get_all_entries(self) -> list:
         """
-        Write the log to disk and return the log file path.
-        Includes a summary section at the top.
+        Return all index entries sorted by processed_at descending (newest first).
         """
-        total = sum(self._stats.values())
-        header = [
-            "=" * 60,
-            f"  Processing log",
-            f"  Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
-            f"  Log file:  {self.log_path}",
-            "=" * 60,
-            "",
-            "  SUMMARY",
-            f"  Rules applied (SUCCESS): {self._stats['SUCCESS']}",
-            f"  No match    (FAILURE):   {self._stats['FAILURE']}",
-            f"  Errors      (ERROR):     {self._stats['ERROR']}",
-            f"  Total rules checked:     {total}",
-            "",
-            "=" * 60,
-            "",
-        ]
+        index = self._load_index()
+        return sorted(index, key=lambda e: e["processed_at"], reverse=True)
 
-        content = "\n".join(header + self._lines)
+    def load_log_detail(self, log_file: str) -> dict | None:
+        """
+        Load full log detail for a specific log file.
 
-        folder = os.path.dirname(self.log_path)
-        if folder and not os.path.exists(folder):
-            os.makedirs(folder)
-
-        with open(self.log_path, "w", encoding="utf-8") as f:
-            f.write(content)
-
-        return self.log_path
+        :param log_file: Path returned from get_all_entries()[n]['log_file'].
+        :return: Full log dict or None if file is missing/corrupt.
+        """
+        if not os.path.isfile(log_file):
+            return None
+        try:
+            with open(log_file, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return None

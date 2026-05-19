@@ -6,9 +6,17 @@ from processing_logger import ProcessingLogger
 
 
 class FileProcessor:
+    """
+    Processes MIF files and records a full processing log.
+
+    Integrates with ProcessingLogger to persist per-file history,
+    including settings snapshot, ContentReplacer logs, and outcome.
+    """
+
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
         self.content_processor = ContentProcessor(settings_manager)
+        self.logger = ProcessingLogger()
 
         lang_code = self.settings_manager.get_meta_data().get("languageCode", None)
 
@@ -19,26 +27,55 @@ class FileProcessor:
             self.signal_replacer = None
 
     def process(self, file_path: str) -> str:
-        """Process file, write result and a log file. Returns path to processed file."""
-        logger = ProcessingLogger(file_path)
+        """
+        Process file and return path to processed file.
 
-        # 1. Read
-        content = FileHandler.read_file(file_path)
+        Saves a detailed log entry regardless of success or failure.
 
-        # 2. Process
-        content = self.content_processor.process(file_path, content, self.signal_replacer)
+        :param file_path: Path to the input MIF file.
+        :return: Path to the output file.
+        :raises Exception: Re-raises any processing exception after logging.
+        """
+        settings_snapshot = self.settings_manager.get_meta_data()
+        content_logs: list[str] = []
+        result_path = None
 
-        # 3. Collect logs from ContentReplacer (passed up via content_processor)
-        if hasattr(self.content_processor, "last_logs"):
-            logger.add_all(self.content_processor.last_logs)
+        try:
+            # 1. Read the file
+            content = FileHandler.read_file(file_path)
 
-        # 4. Write output file
-        base, ext = os.path.splitext(file_path)
-        result_path = f"{base}_processed{ext}"
-        FileHandler.write_file(result_path, content)
+            # 2. Process the content (collect logs from ContentReplacer)
+            content, content_logs = self.content_processor.process_with_logs(
+                file_path, content, self.signal_replacer
+            )
 
-        # 5. Save log
-        log_path = logger.save()
-        print(f"📋 Log saved: {log_path}")
+            # 3. Build the output path
+            base, ext = os.path.splitext(file_path)
+            result_path = f"{base}_processed{ext}"
 
-        return result_path
+            # 4. Write the result
+            FileHandler.write_file(result_path, content)
+
+            # 5. Save success log
+            log_path = self.logger.save_log(
+                file_path=file_path,
+                result_path=result_path,
+                status="success",
+                settings_snapshot=settings_snapshot,
+                content_logs=content_logs,
+            )
+            print(f"📋 Log saved: {log_path}")
+
+            return result_path
+
+        except Exception as e:
+            # Save error log, then re-raise
+            self.logger.save_log(
+                file_path=file_path,
+                result_path=None,
+                status="error",
+                settings_snapshot=settings_snapshot,
+                content_logs=content_logs,
+                error_message=str(e),
+            )
+            raise

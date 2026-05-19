@@ -2,7 +2,7 @@
   {
     "pattern": "(<VariableFormat\\s*<VariableName\\s*`SCHKA1Number'?>\\s*<VariableDef\\s*)(`.*?)('?>)",
     "replacement": "\\1`{KaNumber}'>",
-    "description": "Replace SCHKA1Number variable",
+    "description": "Replace KaNumber SCHKA1Number variable",
     "uses_vars": true
   },
   {
@@ -14,13 +14,13 @@
   {
     "pattern": "(<VariableFormat\\s*<VariableName\\s*`SCHKA1Version'?>\\s*<VariableDef\\s*)(`.*?)('?>)",
     "replacement": "\\1`{KaVersion}'>",
-    "description": "Replace SCHKA1Version variable",
+    "description": "Replace KaVersion SCHKA1Version variable",
     "uses_vars": true
   },
   {
     "pattern": "(<VariableFormat\\s*<VariableName\\s*`SCHDateReleased'?>\\s*<VariableDef\\s*)(`.*?)('?>)",
     "replacement": "\\1`{deliveryDate}'>",
-    "description": "Replace SCHDateReleased variable",
+    "description": "Replace deliveryDate SCHDateReleased variable",
     "uses_vars": true
   },
   {
@@ -32,19 +32,19 @@
   {
     "pattern": "(<VariableFormat\\s*<VariableName\\s*`SCHNameReleased'?>\\s*<VariableDef\\s*)(`.*?)('?>)",
     "replacement": "\\1`{KaNameReleased}'>",
-    "description": "Replace SCHNameReleased variable",
+    "description": "Replace KaNameReleased SCHNameReleased variable",
     "uses_vars": true
   },
   {
     "pattern": "(<VariableFormat\\s*<VariableName\\s*`TIMNameReleasedRD'?>\\s*<VariableDef\\s*)(`.*?)('?>)",
     "replacement": "\\1`{KaNameReleased}'>",
-    "description": "Replace TIMNameReleasedRD variable",
+    "description": "Replace KaNameReleasedTIMNameReleasedRD variable",
     "uses_vars": true
   },
   {
     "pattern": "(<VariableFormat\\s*<VariableName\\s*`TIMDocNumber'?>\\s*<VariableDef\\s*`\\d+)('?>)",
     "replacement": "\\1_{languageCode}'>",
-    "description": "Append languageCode to TIMDocNumber",
+    "description": "Append languageCode languageCode to TIMDocNumber",
     "uses_vars": true
   },
   {
